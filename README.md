@@ -15,7 +15,7 @@ You can watch the demo of the front end <a href="https://rtcamps-plugin-assigmen
 <h1><b>Installation</b></h1>
 <hr />
 <code>
-git clone https://github.com/harshiljoshi37/rtcamp-plugin-assigment-1/path-to-plugins-folder/rtcamp-plugin-assigment-1
+get the git clone https://github.com/harshiljoshi37/rtcamp-plugin-assigment-1/path-to-plugins-folder/rtcamp-plugin-assigment-1
 </code>
 <hr />
 <h1><b>License</b></h1>
