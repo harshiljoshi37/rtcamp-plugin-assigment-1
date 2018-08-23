@@ -1,8 +1,6 @@
 jQuery(document).ready(function($){
 
-
     var custom_uploader;
-
 
     $('#upload-btn').click(function(e) {
 
@@ -17,9 +15,6 @@ jQuery(document).ready(function($){
         //Extend the wp.media object
         custom_uploader = wp.media.frames.file_frame = wp.media({
             title: 'Choose Image',
-            button: {
-                text: 'Choose Image'
-            },
             multiple: true
         });
 
@@ -34,6 +29,4 @@ jQuery(document).ready(function($){
         custom_uploader.open();
 
     });
-
-
 });

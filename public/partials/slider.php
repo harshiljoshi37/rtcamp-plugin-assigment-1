@@ -42,7 +42,7 @@
     <ul class="rslides" id="slider3">
     <?php 
 			global $wpdb;
-			$images = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment' ORDER BY ID ASC");
+			$images = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment' ORDER BY menu_order ASC");
 
 			if( $images ){
 				foreach( $images as $image){
@@ -56,7 +56,7 @@
     <!-- Slideshow 3 Pager -->
     <ul id="slider3-pager">
     <?php
-    $images = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment'  ORDER BY ID ASC");
+    $images = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment'  ORDER BY menu_order ASC");
 
     if( $images ){
       foreach( $images as $image){

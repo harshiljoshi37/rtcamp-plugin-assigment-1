@@ -19,26 +19,58 @@
 	<script>
 	jQuery.noConflict();
 	jQuery( function() {
-		jQuery( "#sortable" ).sortable();
+		var id;
+		var end;
+		jQuery( "#sortable" ).sortable({
+			update: function( event, ui ) {
+    		id = ui.item.attr("id");
+			},
+          	stop: function(event, ui) {
+			end = ui.item.index()+1;
+			document.getElementById("demo").value = id;
+			document.getElementById("demo1").value = end;
+			}
+		});
 		jQuery( "#sortable" ).disableSelection();
-	} );
+	});
   </script>
 </head>
 <body>
-	
-</body>
-</html>
 	<ul id="sortable">
 		<?php 
+			$ids = array();
+			$i = 1;
 			global $wpdb;
-			$images = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment'  ORDER BY ID ASC");
+			$images = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment'  ORDER BY menu_order ASC");
 
 			if( $images ){
 				foreach( $images as $image){
+					$ids[$i] = $image->ID;
+					$wpdb->query("UPDATE wp_posts SET menu_order = '$i' WHERE ID = '$image->ID' ");
 		?>
-					<li class="ui-state-default"><img src="<?php echo $image->guid; ?>" width="130px"/></li>
+					<li class="ui-state-default" id="<?php echo $image->ID; ?>"><img src="<?php echo $image->guid; ?>" width="130px"/></li>
 		<?php
+				$i++;
 				}
 			}
 		?>
 	</ul>
+	<form name="frm" method="POST">
+	<input type="hidden" name="demo" id="demo" value="demo"/>
+	<input type="hidden" name="demo1" id="demo1" value="demo1"/>
+	<?php
+		if(isset($_REQUEST['save-btn'])){
+			$id = $_POST['demo'];
+			$pos = $_POST['demo1'];
+			$demopos = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment' AND ID = '$id' ");
+			foreach ($demopos as $dp) {
+				$idp = $dp->menu_order;
+			}
+			$demo1id = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment' AND menu_order = '$pos' ");
+			foreach ($demo1id as $did) {
+				$pid = $did->ID;
+			}
+			$wpdb->query("UPDATE wp_posts SET menu_order = '$pos' WHERE ID = '$id'");
+			$wpdb->query("UPDATE wp_posts SET menu_order = '$idp' WHERE ID = '$pid'");
+		}
+	?>
