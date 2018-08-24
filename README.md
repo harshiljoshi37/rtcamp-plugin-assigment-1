@@ -7,16 +7,22 @@ You can watch the demo of the front end <a href="https://rtcamps-plugin-assigmen
 <h1><b>Features</b></h1>
 <hr />
 <ul>
-  <li><b<Upload Images:</b> Images are stored in database and dynamically managed by the admin add/remove.</li>
+  <li><b>Upload Images:</b> Images are stored in database and dynamically managed by the admin add/remove.</li>
   <li><b><u>ShortCode:</u></b> To get the front end in any page or post just use <b>[do-it]</b> in that page.</li>
   <li><b>Coding Standards:</b> Coding standards of OBJECT ORIENTED PHP and Variable naming convention are also followed.</li>
+  <li><b>Unit Testing:</b> The initialisation of the public class is unit tested.</li>
   <li><b>Sorting and Changing Positions:</b> Position of the images can be swapped with the Scrollable Functionalities.</li>
+  <li><b>Dependencies:</b> The Testing dependencies are managed by COMPOSER.</li>
 </ul>
 <hr />
 <h1><b>Installation</b></h1>
 <hr />
 <code>
 get the git clone https://github.com/harshiljoshi37/rtcamp-plugin-assigment-1/path-to-plugins-folder/rtcamp-plugin-assigment-1
+
+install PHPUNIT by below command in the "rtcamp-plugin-assigment-1" plugins fulder
+composer require --dev phpunit/phpunit ^7
+
 </code>
 <hr />
 <h1><b>License</b></h1>
