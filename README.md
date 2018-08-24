@@ -12,7 +12,7 @@ You can watch the demo of the front end <a href="https://rtcamps-plugin-assigmen
   <li><b>Coding Standards:</b> Coding standards of OBJECT ORIENTED PHP and Variable naming convention are also followed.</li>
   <li><b>Unit Testing:</b> The initialisation of the public class is unit tested.</li>
   <li><b>Sorting and Changing Positions:</b> Position of the images can be swapped with the Scrollable Functionalities.</li>
-  <li><b>Dependencies:</b> The Testing dependencies are managed by COMPOSER.</li>
+  <li><b>Dependencies:</b> The Testing dependencies are managed by COMPOSER. (Vendor folder is git ignored)</li>
 </ul>
 <hr />
 <h1><b>Installation</b></h1>
