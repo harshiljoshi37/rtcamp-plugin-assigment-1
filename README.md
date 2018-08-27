@@ -20,7 +20,7 @@ You can watch the demo of the front end <a href="https://rtcamps-plugin-assigmen
 <code>
 get the git clone https://github.com/harshiljoshi37/rtcamp-plugin-assigment-1/path-to-plugins-folder/rtcamp-plugin-assigment-1
 
-install PHPUNIT by below command in the "rtcamp-plugin-assigment-1" plugins fulder
+install PHPUNIT by below command in the "rtcamp-plugin-assigment-1" plugins folder
 composer require --dev phpunit/phpunit ^7
 
 </code>
