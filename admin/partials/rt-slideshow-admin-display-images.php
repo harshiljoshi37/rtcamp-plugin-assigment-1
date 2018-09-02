@@ -48,7 +48,7 @@
 					$ids[$i] = $image->ID;
 					$wpdb->query("UPDATE wp_posts SET menu_order = '$i' WHERE ID = '$image->ID' ");
 		?>
-					<li class="ui-state-default" id="<?php echo $image->ID; ?>"><img src="<?php echo $image->guid; ?>" width="130px"/></li>
+					<li class="ui-state-default" id="<?php echo $image->ID; ?>"><img src="<?php echo $image->guid; ?>" class="hwadjust"/></li>
 		<?php
 				$i++;
 				}

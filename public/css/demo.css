@@ -221,3 +221,8 @@ p,h3,h4,pre {
     top: 47%;
     }
   }
+
+.hwadjust{
+  height: 100px !important;
+  width: 130px !important;
+}
