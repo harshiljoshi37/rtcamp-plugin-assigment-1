@@ -73,4 +73,7 @@
 			$wpdb->query("UPDATE wp_posts SET menu_order = '$pos' WHERE ID = '$id'");
 			$wpdb->query("UPDATE wp_posts SET menu_order = '$idp' WHERE ID = '$pid'");
 		}
+		if(isset($_REQUEST['manage-category'])){
+			echo "<script language='javascript'>window.location.href='../wp-content/plugins/rtcamp-plugin-assigment-1/admin/partials/rt-slideshow-admin-manage-category.php'</script>";
+		}
 	?>

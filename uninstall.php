@@ -13,3 +13,6 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+global $wpdb;
+$wpdb->query( "DROP TABLE IF EXISTS rt_plugin_image" );
+$wpdb->query( "DROP TABLE IF EXISTS rt_plugin_category" );

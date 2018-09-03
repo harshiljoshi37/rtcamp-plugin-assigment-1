@@ -20,8 +20,8 @@
 			Means if you change 1st image on 3rd Position then third image will get on 1st position and 1st will go on 3rd.<br />
 			Then Click on Save Button and <b>REFRESH THE PAGE TO SEE THE APPLIED CHANGES.<b>
 		</p>
-		<input type="submit" name="save-btn" id="save-btn" class="button-primary" value="Save">
-		<input type="button" name="upload-btn" id="upload-btn" class="button-secondary" value="Modify Images">
+		<input type="submit" name="save-btn" id="save-btn" class="button-primary" value="Save" />
+		<input type="button" name="upload-btn" id="upload-btn" class="button-primary" value="Modify Images">
 	</div>
 </div>
 </form>

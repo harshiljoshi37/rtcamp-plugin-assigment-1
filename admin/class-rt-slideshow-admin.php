@@ -21,6 +21,7 @@
  */
 class Rt_Slideshow_Admin {
 
+	public $category_id = 0;
 	function __construct() {
 		add_action( 'admin_menu', array( $this, 'add_options_page' ) );
 	}
@@ -38,10 +39,12 @@ class Rt_Slideshow_Admin {
 		wp_enqueue_style( 'rt-slideshow1', plugins_url( '../public/css/responsiveslides.css', __FILE__ ));
 		wp_enqueue_style( 'rt-slideshow2', plugins_url( 'css/rt-slideshow-admin.css', __FILE__ ));
 		wp_enqueue_style( 'rt-slideshow3', plugins_url( 'css/c.css', __FILE__ ));
+		wp_enqueue_style( 'rt-slideshow4', plugins_url( 'css/bootstrap.min.css', __FILE__ ));
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'rt-slideshow' , plugins_url( 'js/rt-slideshow-admin.js', __FILE__));
-		//wp_enqueue_script( 'rt-slideshow3' , plugins_url( 'js/first.js', __FILE__));
+		wp_enqueue_script( 'rt-slideshow3' , plugins_url( 'js/jquery.min.js', __FILE__));
 		wp_enqueue_script( 'rt-slideshow4' , plugins_url( 'js/second.js', __FILE__));
+		wp_enqueue_script( 'rt-slideshow5' , plugins_url( 'js/bootstrap.min.js', __FILE__));
 		wp_enqueue_script( 'rt-slideshow1' , plugins_url( '../public/js/responsiveslides.min.js', __FILE__ ));
 		wp_enqueue_script( 'rt-slideshow2' , plugins_url( '../public/js/responsiveslides.js', __FILE__ ));
 	}
@@ -66,6 +69,13 @@ class Rt_Slideshow_Admin {
 	public function add_settings_section() {
 
 		add_settings_section(
+			'Manage Categories',
+			'Categories',
+			array( $this, 'display_category_section' ),
+			'rt-plugin'
+		);
+
+		add_settings_section(
 			'slider_preview',
 			'Slider Live Preview',
 			array( $this, 'display_slider_section' ),
@@ -82,9 +92,9 @@ class Rt_Slideshow_Admin {
 	}
 
 	public function display_slider_section() {
-
-		include '../wp-content/plugins/rtcamp-plugin-assigment-1/public/partials/slider.php';
 		
+		include '../wp-content/plugins/rtcamp-plugin-assigment-1/public/partials/slider.php';
+
 	}
 
 	public function display_options_page() {
@@ -96,6 +106,12 @@ class Rt_Slideshow_Admin {
 	public function display_images_section() {
 
 		include_once 'partials/rt-slideshow-admin-display-images.php';
+
+	}
+
+	public function display_category_section() {
+
+		$this->category_id = include_once 'partials/rt-slideshow-admin-select-category.php';
 
 	}
 
