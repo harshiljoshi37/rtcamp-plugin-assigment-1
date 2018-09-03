@@ -13,16 +13,15 @@ You can watch the demo of the front end <a href="https://rtcamps-plugin-assigmen
   <li><b>Unit Testing:</b> The initialisation of the public class is unit tested.</li>
   <li><b>Sorting and Changing Positions:</b> Position of the images can be swapped with the Scrollable Functionalities.</li>
   <li><b>Dependencies:</b> The Testing dependencies are managed by COMPOSER. (Vendor folder is git ignored)</li>
+  <li><b>Categorised Slider:</b> This slider is seperated category wise so insert a category manage categories and images along with the categories.</li>
 </ul>
 <hr />
 <h1><b>Installation</b></h1>
 <hr />
 <code>
 get the git clone https://github.com/harshiljoshi37/rtcamp-plugin-assigment-1/path-to-plugins-folder/rtcamp-plugin-assigment-1
-
 install PHPUNIT by below command in the "rtcamp-plugin-assigment-1" plugins folder
 composer require --dev phpunit/phpunit ^7
-
 </code>
 <hr />
 <h1><b>License</b></h1>

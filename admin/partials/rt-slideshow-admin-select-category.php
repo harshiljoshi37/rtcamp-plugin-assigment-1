@@ -18,7 +18,7 @@
     <title>Manage Category Page</title>
 </head>
 <body>
-<form name="frm" method="POST">
+<form name="frm" method="POST" enctype="multipart/form-data">
     <select id="category_select" name="category_select">
     <option value="">Select A Category</option>
 <?php
@@ -79,7 +79,7 @@
 ?>
         <tr>
             <td><?php echo $category->category_name; ?></td>
-            <td><input type="text" name="catId" value="<?php echo $category->category_id ?>" /></td>
+            <!--<td><input type="text" name="catId" value="<?php echo $category->category_id ?>" /></td>-->
             <td><input type="submit" name="delete" class="btn-danger" value="Delete<?php echo $category->category_id ?>"/></td>
         </tr>
 <?php

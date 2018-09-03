@@ -37,43 +37,41 @@
 </head>
 <body>
 	<ul id="sortable">
-		<?php 
+		<?php
+			$cateId = $this->category_id; 
 			$ids = array();
 			$i = 1;
 			global $wpdb;
-			$images = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment'  ORDER BY menu_order ASC");
+			$images = $wpdb->get_results("SELECT * FROM rt_plugin_image WHERE category_id = '$cateId'  ORDER BY imgorder ASC");
 
 			if( $images ){
 				foreach( $images as $image){
-					$ids[$i] = $image->ID;
-					$wpdb->query("UPDATE wp_posts SET menu_order = '$i' WHERE ID = '$image->ID' ");
+					$ids[$i] = $image->image_id;
+					$wpdb->query("UPDATE rt_plugin_image SET imgorder = '$i' WHERE image_id = '$image->image_id' ");
 		?>
-					<li class="ui-state-default" id="<?php echo $image->ID; ?>"><img src="<?php echo $image->guid; ?>" class="hwadjust"/></li>
+					<li class="ui-state-default" id="<?php echo $image->image_id; ?>"><img src="<?php echo $image->image; ?>" class="hwadjust"/></li>
 		<?php
 				$i++;
 				}
 			}
 		?>
 	</ul>
-	<form name="frm" method="POST">
+	<form name="frm" method="POST" enctype="multipart/form-data">
 	<input type="hidden" name="demo" id="demo" value="demo"/>
 	<input type="hidden" name="demo1" id="demo1" value="demo1"/>
 	<?php
 		if(isset($_REQUEST['save-btn'])){
 			$id = $_POST['demo'];
 			$pos = $_POST['demo1'];
-			$demopos = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment' AND ID = '$id' ");
+			$demopos = $wpdb->get_results("SELECT * FROM rt_plugin_image WHERE category_id = '$cateId' AND image_id = '$id' ");
 			foreach ($demopos as $dp) {
-				$idp = $dp->menu_order;
+				$idp = $dp->imgorder;
 			}
-			$demo1id = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment' AND menu_order = '$pos' ");
+			$demo1id = $wpdb->get_results("SELECT * FROM rt_plugin_image WHERE category_id = '$cateId' AND imgorder = '$pos' ");
 			foreach ($demo1id as $did) {
-				$pid = $did->ID;
+				$pid = $did->image_id;
 			}
-			$wpdb->query("UPDATE wp_posts SET menu_order = '$pos' WHERE ID = '$id'");
-			$wpdb->query("UPDATE wp_posts SET menu_order = '$idp' WHERE ID = '$pid'");
-		}
-		if(isset($_REQUEST['manage-category'])){
-			echo "<script language='javascript'>window.location.href='../wp-content/plugins/rtcamp-plugin-assigment-1/admin/partials/rt-slideshow-admin-manage-category.php'</script>";
+			$wpdb->query("UPDATE rt_plugin_image SET imgorder = '$pos' WHERE image_id = '$id'");
+			$wpdb->query("UPDATE rt_plugin_image SET imgorder = '$idp' WHERE image_id = '$pid'");
 		}
 	?>

@@ -12,7 +12,9 @@
  */
 
 ?>
-
+<?php
+  $cateId = $this->category_id;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,12 +44,12 @@
     <ul class="rslides" id="slider3">
     <?php 
 			global $wpdb;
-			$images = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment' ORDER BY menu_order ASC");
+			$images = $wpdb->get_results("SELECT * FROM rt_plugin_image WHERE category_id = '$cateId' ORDER BY imgorder ASC");
 
 			if( $images ){
 				foreach( $images as $image){
 		?>
-      <li><img src="<?php echo $image->guid; ?>" alt=""></li>
+      <li><img src="<?php echo $image->image; ?>" alt=""></li>
     <?php
         }
       }
@@ -56,12 +58,12 @@
     <!-- Slideshow 3 Pager -->
     <ul id="slider3-pager">
     <?php
-    $images = $wpdb->get_results("SELECT * FROM wp_posts WHERE post_type = 'attachment'  ORDER BY menu_order ASC");
+    $images = $wpdb->get_results("SELECT * FROM rt_plugin_image WHERE category_id = '$cateId' ORDER BY imgorder ASC");
 
     if( $images ){
       foreach( $images as $image){
 ?>
-      <li><a href="#"><img src="<?php echo $image->guid; ?>" class="hwadjust" alt=""></a></li>
+      <li><a href="#"><img src="<?php echo $image->image; ?>" class="hwadjust" alt=""></a></li>
     <?php
       }
     }

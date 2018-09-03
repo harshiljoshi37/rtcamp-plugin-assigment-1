@@ -22,10 +22,11 @@ class Rt_Slideshow_Activator {
 		$imgsql = "CREATE TABLE rt_plugin_image(image_id int(3) AUTO_INCREMENT,
 		category_id int(3),
  		title varchar(50) NOT NULL,
- 		image varchar(255) NOT NULL,
+		image varchar(255) NOT NULL,
  		imgorder int(10),
  		PRIMARY KEY(image_id),
-		FOREIGN KEY (category_id) REFERENCES rt_plugin_category(category_id));";
+		FOREIGN KEY (category_id) REFERENCES rt_plugin_category(category_id)
+		ON DELETE CASCADE);";
 		$wpdb->query($imgsql);
 	}
 
