@@ -39,7 +39,7 @@ class Rt_Slideshow_Public {
 
 		// Start output buffering.
 		ob_start();
-
+		$cateId = 1;
 		include_once 'partials/slider.php';
 
 		// End output buffer and return it.

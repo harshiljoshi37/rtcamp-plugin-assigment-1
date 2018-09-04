@@ -12,9 +12,6 @@
  */
 
 ?>
-<?php
-  $cateId = $this->category_id;
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +28,14 @@
       // Slideshow 3
       jQuery("#slider3").responsiveSlides({
         manualControls: '#slider3-pager',
-        maxwidth: 540
+        maxwidth: 540,
+        nav: true,
+        before: function () {
+          jQuery('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          jQuery('.events').append("<li>after event fired.</li>");
+        }
       });
 
     });
@@ -41,6 +45,7 @@
   <div id="wrapper">
     <h1>ResponsiveSlides.js</h1>
     <!-- Slideshow 3 -->
+    <div class="callbacks_container">
     <ul class="rslides" id="slider3">
     <?php 
 			global $wpdb;
@@ -55,6 +60,7 @@
       }
     ?>
     </ul>
+    </div>
     <!-- Slideshow 3 Pager -->
     <ul id="slider3-pager">
     <?php

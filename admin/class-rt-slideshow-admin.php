@@ -92,7 +92,7 @@ class Rt_Slideshow_Admin {
 	}
 
 	public function display_slider_section() {
-		
+		$cateId = $this->category_id;
 		include '../wp-content/plugins/rtcamp-plugin-assigment-1/public/partials/slider.php';
 
 	}
