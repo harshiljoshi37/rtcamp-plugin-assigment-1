@@ -8,7 +8,8 @@ You can watch the demo of the front end <a href="https://rtcamps-plugin-assigmen
 <hr />
 <ul>
   <li><b>Upload Images:</b> Images are stored in database and dynamically managed by the admin add/remove.</li>
-  <li><b><u>ShortCode:</u></b> To get the front end in any page or post just use <b>[do-it]</b> in that page.</li>
+  <li><b>Manual Slider Navigation:</b> The slider navigation is done in 2 ways, First is by the thumbnail images provided below and Second way is by the Previous and Next "TEXT LINKS" provided ( '<' and '>' symbols were not working so provided text ).</li>
+  <li><b><u>ShortCode:</u></b> To get the front end in any page or post just use <b>[do-it id="1"]</b> in that page. The Shortcode is parameterised so in the place of "1" you can change the parameter to your category id.</li>
   <li><b>Coding Standards:</b> Coding standards of OBJECT ORIENTED PHP and Variable naming convention are also followed.</li>
   <li><b>Unit Testing:</b> The initialisation of the public class is unit tested.</li>
   <li><b>Sorting and Changing Positions:</b> Position of the images can be swapped with the Scrollable Functionalities.</li>
