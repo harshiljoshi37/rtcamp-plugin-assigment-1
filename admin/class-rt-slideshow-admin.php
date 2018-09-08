@@ -21,7 +21,7 @@
  */
 class Rt_Slideshow_Admin {
 
-	public $category_id = 0;
+	public $category_id = 1;
 	function __construct() {
 		add_action( 'admin_menu', array( $this, 'add_options_page' ) );
 		add_action( 'admin_init', array( $this, 'register_button' ) );

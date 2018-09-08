@@ -19,8 +19,9 @@
 </head>
 <body>
 <form name="frm" method="POST" enctype="multipart/form-data">
+<p>Select a category and press the LOAD CONTENT button to load the slider of that category.<br />
+    By Default Slider of Category 1 is loaded</p>
     <select id="category_select" name="category_select">
-    <option value="">Select A Category</option>
 <?php
     global $wpdb;
     $categories = $wpdb->get_results("SELECT * FROM rt_plugin_category");
@@ -67,6 +68,7 @@
           <h4 class="modal-title">Manage Categories</h4>
         </div>
         <div class="modal-body">
+        <p>Category id 1 is selected as a default category id. Therefore You can not delete the Category ID 1</p>
         <table border="2" align="center">
               <tr>
                   <th>Category Name</th>
@@ -80,7 +82,20 @@
         <tr>
             <td><?php echo $category->category_name; ?></td>
             <!--<td><input type="text" name="catId" value="<?php echo $category->category_id ?>" /></td>-->
-            <td><input type="submit" name="delete" class="btn-danger" value="Delete<?php echo $category->category_id ?>"/></td>
+            <td>
+                <?php
+                    if($category->category_id == 1){
+                ?>
+                        <input type="submit" name="delete" class="btn-danger" value="Delete<?php echo $category->category_id ?>" disabled="true"/>
+                <?php
+                    }
+                    else{
+                ?>
+                        <input type="submit" name="delete" class="btn-danger" value="Delete<?php echo $category->category_id ?>"/>
+                <?php        
+                    }
+                ?>
+            </td>
         </tr>
 <?php
     }

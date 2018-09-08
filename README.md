@@ -14,6 +14,8 @@ You can watch the demo of the front end <a href="https://rtcamps-plugin-assigmen
   <li><b>Sorting and Changing Positions:</b> Position of the images can be swapped with the Scrollable Functionalities.</li>
   <li><b>Dependencies:</b> The Testing dependencies are managed by COMPOSER. (Vendor folder is git ignored)</li>
   <li><b>Categorised Slider:</b> This slider is seperated category wise so insert a category manage categories and images along with the categories.</li>
+  <li><b>Visual Button:</b>There is a button for adding the shortcode to the page or post in Visual Editor Toolbar</li>
+  <li><b>By Default Id:</b>When you click on the button in visual editor to add shortcode it will by default load the category 1. If you want to change then you can manually change the id in the page or post. And if you dont pass any id in the shortcode parameters then 1 is set as default parameter.</li>
 </ul>
 <hr />
 <h1><b>Installation</b></h1>

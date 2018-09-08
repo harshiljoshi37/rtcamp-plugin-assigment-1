@@ -8,7 +8,7 @@
                     icon: false,
                     onclick: function() {
                       // change the shortcode as per your requirement
-                       editor.insertContent('[do-it]');
+                       editor.insertContent('[do-it id="1"]');
 
                    }
           });
