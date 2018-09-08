@@ -24,9 +24,12 @@ class Rt_Slideshow_Public {
 	}
 
 	public function register_shortcode() {
-		function shortcode( $atts = [], $content = null ) {
-
-			$content .= Rt_Slideshow_Public::display_slider();
+		function shortcode( $atts, $content = null ) {
+			extract(shortcode_atts( array(
+				'id' => '1',
+			), $atts));
+			$var = "{$id}";
+			$content .= Rt_Slideshow_Public::display_slider($var);
 			return $content;
 
 		}
@@ -35,11 +38,11 @@ class Rt_Slideshow_Public {
 
 	}
 
-	public static function display_slider() {
+	public static function display_slider($cateId) {
 
 		// Start output buffering.
 		ob_start();
-		$cateId = 1;
+		//$cateId = 1;
 		include_once 'partials/slider.php';
 
 		// End output buffer and return it.
