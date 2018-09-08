@@ -24,6 +24,7 @@ class Rt_Slideshow_Admin {
 	public $category_id = 0;
 	function __construct() {
 		add_action( 'admin_menu', array( $this, 'add_options_page' ) );
+		add_action( 'admin_init', array( $this, 'register_button' ) );
 	}
 	/**
 	 * Register the stylesheets for the admin area.
@@ -32,7 +33,25 @@ class Rt_Slideshow_Admin {
 	 */
 	function register_scripts() {
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-    }
+	}
+	function register_button(){
+		if( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' )){
+			add_filter('mce_external_plugins', array($this, 'get_our_js'));
+			add_filter('mce_buttons', array( $this, 'register_but'));
+		}
+		// if ( 'true' == get_user_option( 'rich_editing' ) ){
+		// 	add_filter('mce_external_plugins', array($this, 'get_our_js'));
+		// 	add_filter('mce_buttons', array( $this, 'register_but'));
+		// }
+	}
+	function get_our_js( $plugin_array ){
+		$plugin_array['rt-plugin'] = plugins_url( 'js/button.js', __FILE__ );
+		return $plugin_array;
+	}
+	function register_but( $buttons ){
+		array_push( $buttons, 'separator', 'rt-plugin' );
+		return $buttons;
+	}
 	public function enqueue_scripts() {
 		wp_enqueue_media();
 		wp_enqueue_style( 'rt-slideshow', plugins_url( '../public/css/demo.css', __FILE__ ));
@@ -40,13 +59,14 @@ class Rt_Slideshow_Admin {
 		wp_enqueue_style( 'rt-slideshow2', plugins_url( 'css/rt-slideshow-admin.css', __FILE__ ));
 		wp_enqueue_style( 'rt-slideshow3', plugins_url( 'css/c.css', __FILE__ ));
 		wp_enqueue_style( 'rt-slideshow4', plugins_url( 'css/bootstrap.min.css', __FILE__ ));
-		wp_enqueue_script( 'jquery' );
+		//wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'rt-slideshow' , plugins_url( 'js/rt-slideshow-admin.js', __FILE__));
 		wp_enqueue_script( 'rt-slideshow3' , plugins_url( 'js/jquery.min.js', __FILE__));
 		wp_enqueue_script( 'rt-slideshow4' , plugins_url( 'js/second.js', __FILE__));
 		wp_enqueue_script( 'rt-slideshow5' , plugins_url( 'js/bootstrap.min.js', __FILE__));
 		wp_enqueue_script( 'rt-slideshow1' , plugins_url( '../public/js/responsiveslides.min.js', __FILE__ ));
 		wp_enqueue_script( 'rt-slideshow2' , plugins_url( '../public/js/responsiveslides.js', __FILE__ ));
+		//wp_enqueue_script( 'rt-slideshow6' , plugins_url( 'js/button.js', __FILE__ ));
 	}
 	/**
 	 * Adds an options page under the Settings submenu

@@ -50,7 +50,7 @@
 			  ?>
 		  </select>
 		  Select Image:
-		  <input type="file" name="file">
+		  <input type="file" name="file" multiple="true">
 		  <input type="submit" name="iupload" class="btn-primary" value="Insert">
         </div>
         <div class="modal-footer">

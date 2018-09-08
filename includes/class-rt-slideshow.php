@@ -42,5 +42,6 @@ class Rt_Slideshow {
 		$shrt->register_shortcode();
 		$sadmin = new Rt_Slideshow_Admin();
 		$sadmin->register_scripts();
+		//$sadmin->register_button();
 	}
 }
