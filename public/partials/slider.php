@@ -54,7 +54,7 @@
 			if( $images ){
 				foreach( $images as $image){
 		?>
-      <li><img src="<?php echo $image->image; ?>" alt=""></li>
+      <li><img src="../<?php echo $image->image; ?>" alt=""></li>
     <?php
         }
       }
@@ -69,7 +69,7 @@
     if( $images ){
       foreach( $images as $image){
 ?>
-      <li><a href="#"><img src="<?php echo $image->image; ?>" class="hwadjust" alt=""></a></li>
+      <li><a href="#"><img src="../<?php echo $image->image; ?>" class="hwadjust" alt=""></a></li>
     <?php
       }
     }

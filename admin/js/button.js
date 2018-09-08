@@ -3,7 +3,7 @@
     tinymce.PluginManager.add('rt-plugin', function( editor, url ) {
         editor.addButton('rt-plugin', {
                     type: 'button',
-                    text: 'AApdu Button',
+                    text: 'Rt-Slider_Add',
                     id: 'btnShrt',
                     icon: false,
                     onclick: function() {

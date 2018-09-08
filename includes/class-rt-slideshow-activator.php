@@ -28,6 +28,14 @@ class Rt_Slideshow_Activator {
 		FOREIGN KEY (category_id) REFERENCES rt_plugin_category(category_id)
 		ON DELETE CASCADE);";
 		$wpdb->query($imgsql);
+
+		$catEntry = "INSERT INTO rt_plugin_category VALUES('1','Test')";
+		$wpdb->query($catEntry);
+
+		$imgEntry1 = "INSERT INTO rt_plugin_image VALUES('1','1','ec1.jpg','wp-content/plugins/rtcamp-plugin-assigment-1/images/ec1.jpg','1')";
+		$imgEntry2 = "INSERT INTO rt_plugin_image VALUES('2','1','ec2.jpg','wp-content/plugins/rtcamp-plugin-assigment-1/images/ec2.jpg','2')";
+		$wpdb->query($imgEntry1);
+		$wpdb->query($imgEntry2);
 	}
 
 }

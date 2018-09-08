@@ -13,7 +13,8 @@
 class Rt_Slideshow_Deactivator {
 
 	public static function deactivate() {
-
+		global $wpdb;
+		$wpdb->query("DELETE FROM rt_plugin_category");
 	}
 
 }

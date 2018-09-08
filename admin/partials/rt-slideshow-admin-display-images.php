@@ -49,7 +49,7 @@
 					$ids[$i] = $image->image_id;
 					$wpdb->query("UPDATE rt_plugin_image SET imgorder = '$i' WHERE image_id = '$image->image_id' ");
 		?>
-					<li class="ui-state-default" id="<?php echo $image->image_id; ?>"><img src="<?php echo $image->image; ?>" class="hwadjust"/></li>
+					<li class="ui-state-default" id="<?php echo $image->image_id; ?>"><img src="../<?php echo $image->image; ?>" class="hwadjust"/></li>
 		<?php
 				$i++;
 				}
