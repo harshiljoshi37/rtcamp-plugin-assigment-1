@@ -4,6 +4,13 @@
 <hr />
 You can watch the demo of the front end <a href="https://rtcamps-plugin-assigment.000webhostapp.com/slideshow-plugin">here</a>
 <hr />
+<h1><b>Important Note</b></h1>
+<hr />
+<code>
+Whenever You Clone or Download the plugin from GITHUB and if the directory name contains the name as <br />
+<b><strike>rtcamp-plugin-assigment-1-master</strike></b> then change it to <b><u>rtcamp-plugin-assigment-1</u></b>.
+</code>
+<hr />
 <h1><b>Features</b></h1>
 <hr />
 <ul>
