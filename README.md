@@ -8,7 +8,7 @@ You can watch the demo of the front end <a href="https://rtcamps-plugin-assigmen
 <hr />
 <code>
 Whenever You Clone or Download the plugin from GITHUB and if the directory name contains the name as <br />
-<b><strike>rtcamp-plugin-assigment-1-master</strike></b> then change it to <b><u>rtcamp-plugin-assigment-1</u></b>.
+<b><strike>rtcamp-plugin-assigment-1-master</strike></b> then change it to <b><u>rtcamp-plugin-assigment-1</u></b>. Remove the " -master " from the directory name.
 </code>
 <hr />
 <h1><b>Features</b></h1>
